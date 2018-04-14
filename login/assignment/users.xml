@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml-stylesheet type="text/css" href="mystyle.css" ?>-->
+<database >
+	<User >
+		<Email>abc@gmail.com</Email>
+		<Password>900150983cd24fb0d6963f7d28e17f72</Password>
+	</User>
+	<User >
+		<Email>asd@gmail.com</Email>
+		<Password>7815696ecbf1c96e6894b779456d330e</Password>
+	</User>
+	<User>
+		<Email>qwe@yahoo.com</Email>
+		<Password>76d80224611fc919a5d54f0ff9fba446</Password>
+	</User>
+</database>

@@ -1,0 +1,34 @@
+.page-heading1{
+	text-align: center;
+	font-size: 30px;
+	margin-top: 0;
+	margin-bottom: 0;
+	background: #ff0000 ; 
+	color =red;
+}
+.form-container{
+	border:1px solid black;
+	text-align: center;
+	width: 450px;
+	margin: 180px 500px; 
+	background: red; 
+		color =red;
+	
+}
+#aa{
+	background: #ff0000 ; 
+	color =red;
+}
+body{
+	
+}
+#a{
+	margin-bottom: 15px;
+		color =red;
+}
+.hr_pageheading{
+	margin-top: 0;
+	margin-bottom: 0;
+	color =red;
+	background: #ff0000 ; 
+}
