@@ -1,0 +1,4 @@
+use  anchor tag for the buttons;
+or no buttons needed just use href 
+anchor tag will pass query parameter
+for that query parameter 
