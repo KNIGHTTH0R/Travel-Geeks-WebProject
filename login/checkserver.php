@@ -4,8 +4,8 @@ $_SESSION["flag"]="";
 
 
 //$auth=array();
-//include("function.php"); 
-//^ for using xml 
+//include("function.php");
+//^ for using xml
 include("functionsql.php");
 loadsql();
 $u = $_REQUEST['email'];
@@ -26,20 +26,20 @@ if ($p == ""){
 
 
 if(!$checkerror){
-	
-	
-	
-	
+
+
+
+
 
 if(isset($auth[$u]) && $auth[$u]==md5($p) ){ //md5($p)
-	
+
 	//$_SESSION["flag"]="go";
 	//$_SESSION["user"]=$_REQUEST['email'];
 	// removing session for rn
 	setcookie("flag",true);
 	setcookie("user",$_REQUEST['email']);//we applied cookie here couldve used $U 2//
 	header ("location:demo.php?user=$u");
-	
+
 }
 else {
 	echo "invalid $u";
@@ -48,7 +48,7 @@ else {
 }
 else{
 	header ("location:index.php?invalid");
-	
+
 }
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2018 at 06:02 PM
+-- Generation Time: Apr 21, 2018 at 07:15 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -52,6 +52,7 @@ INSERT INTO `events` (`Event_id`, `Event_name`, `Description`, `pref_season_id`,
 CREATE TABLE `post_content` (
   `POST_ID` int(12) NOT NULL,
   `user_id` int(12) NOT NULL,
+  `Text` text NOT NULL,
   `season` varchar(20) NOT NULL,
   `content_type` varchar(20) NOT NULL,
   `similar_places` varchar(20) NOT NULL,
@@ -62,8 +63,8 @@ CREATE TABLE `post_content` (
 -- Dumping data for table `post_content`
 --
 
-INSERT INTO `post_content` (`POST_ID`, `user_id`, `season`, `content_type`, `similar_places`, `spot_id`) VALUES
-(1, 1, 'Spring', 'Review', '2', 1);
+INSERT INTO `post_content` (`POST_ID`, `user_id`, `Text`, `season`, `content_type`, `similar_places`, `spot_id`) VALUES
+(1, 1, '', 'Spring', 'Review', '2', 1);
 
 -- --------------------------------------------------------
 
@@ -140,23 +141,31 @@ CREATE TABLE `users` (
   `gender` varchar(6) NOT NULL,
   `Name` varchar(250) NOT NULL,
   `Lastname` varchar(250) NOT NULL,
-  `ImageAddress` varchar(250) DEFAULT NULL
+  `ImageAddress` varchar(250) DEFAULT NULL,
+  `Role` varchar(10) NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='this is user lul';
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `password`, `email`, `address`, `dob`, `gender`, `Name`, `Lastname`, `ImageAddress`) VALUES
-(1, '0f603f39c846b66c21e3fd5a8ff4d9f9', 'al@gmail.com', 'mirpur', '2000-01-08', 'male', 'Alom', '', ''),
-(2, '900150983cd24fb0d6963f7d28e17f72', 'abc@gmail.com', 'bd', NULL, 'male', 'Far', 'Ras', 'uploads/11-8-bit-pixel-character.jpg'),
-(3, '289dff07669d7a23de0ef88d2f7129e7', 'qwe@g.com', 'ghana', NULL, 'female', 'qwe', 'asd', 'uploads/ffff.jpg'),
-(6, '4d682ec4eed27c53849758bc13b6e179', 'ts@gmail.com', 'Dhaka ', NULL, 'male', 'Tanvir', 'Shuvo', 'uploads/30653007_2045268288822036_1675620596488077312_o.jpg'),
-(9, '202cb962ac59075b964b07152d234b70', '123@c.com', '123', '2018-04-04', 'male', '123', '123', 'uploads/sfweweee.JPG');
+INSERT INTO `users` (`user_id`, `password`, `email`, `address`, `dob`, `gender`, `Name`, `Lastname`, `ImageAddress`, `Role`) VALUES
+(2, '900150983cd24fb0d6963f7d28e17f72', 'abc@gmail.com', 'bd', NULL, 'male', 'Far', 'Ras', 'uploads/11-8-bit-pixel-character.jpg', 'admin'),
+(3, '289dff07669d7a23de0ef88d2f7129e7', 'qwe@g.com', 'ghana', NULL, 'female', 'qwe', 'asd', 'uploads/ffff.jpg', 'user'),
+(6, '4d682ec4eed27c53849758bc13b6e179', 'ts@gmail.com', 'Dhaka ', NULL, 'male', 'Tanvir', 'Shuvo', 'uploads/30653007_2045268288822036_1675620596488077312_o.jpg', 'user'),
+(9, '202cb962ac59075b964b07152d234b70', '123@c.com', '123', '2018-04-04', 'male', '123', '123', 'uploads/sfweweee.JPG', 'user'),
+(10, '0cc175b9c0f1b6a831c399e269772661', 'Abacus@gmail.com', 'Mirpur', '2014-06-17', 'male', 'Abacus', 'King', 'uploads/041.jpg', 'user'),
+(11, '0cc175b9c0f1b6a831c399e269772661', 'Abacus2@gmail.com', 'Mirpur', '2014-06-17', 'male', 'Abacus', 'KingTwo', 'uploads/041.jpg', 'user');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `post_content`
+--
+ALTER TABLE `post_content`
+  ADD PRIMARY KEY (`POST_ID`);
 
 --
 -- Indexes for table `spot_types`
@@ -196,7 +205,7 @@ ALTER TABLE `tourist_spot`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

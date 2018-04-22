@@ -19,8 +19,8 @@ if(isset ($_GET["Architecture"])){
 
 		//echo $v["name"]." from ".$v["dept"];
 		echo "</p>";
-	
-	
+
+
 }
 
 }

@@ -1,6 +1,6 @@
 <?php
 function updateDB($sql){
-	$conn = mysqli_connect("localhost", "root", "", "travel");
+	$conn = mysqli_connect("localhost", "root", "", "record");
 	if (!$conn) {
 		die("Connection failed: " . mysqli_connect_error());
 	}
@@ -11,19 +11,16 @@ function updateDB($sql){
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
 }
-
 function updateSQL($sql){
-	$conn = mysqli_connect("localhost", "root", "","travel");
+	$conn = mysqli_connect("localhost", "root", "","record");
 	//echo $sql;
 	$result = mysqli_query($conn, $sql)or die(mysqli_error());
 	return $result;
 }
-//$s="insert into student values('".$_POST["id"]."','name',3.99)";
-//$updateSQL($s);
 function getJSONFromDB($sql){
-	$conn = mysqli_connect("localhost", "root", "","travel");
+	$conn = mysqli_connect("localhost", "root", "","record");
 	//echo $sql;
-	$result = mysqli_query($conn, $sql)or die(mysqli_error($$conn));
+	$result = mysqli_query($conn, $sql)or die(mysqli_error($conn));
 	$arr=array();
 	//print_r($result);
 	while($row = mysqli_fetch_assoc($result)) {
@@ -32,7 +29,7 @@ function getJSONFromDB($sql){
 	return json_encode($arr);
 }
 function getDataFromDB($sql){
-	$conn = mysqli_connect("localhost", "root", "","travel");
+	$conn = mysqli_connect("localhost", "root", "","record");
 	//echo $sql;
 	$result = mysqli_query($conn, $sql)or die(mysqli_error($conn));
 	$arr=array();
