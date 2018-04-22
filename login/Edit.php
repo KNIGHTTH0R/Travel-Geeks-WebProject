@@ -1,4 +1,5 @@
 <script type="text/javascript">
+//for users edit
 function checkpasss(){
 var password=document.getElementById("pass").value;
 	var conpassword=document.getElementById("conpass").value;
@@ -155,8 +156,7 @@ Addresss <input type = "text" name = "address" id ="address"> <br>
 				Select file to upload : <input type="file" name="fileToUpload" id = "upload">
 				<br>
 
-				<input type= "radio" name="r" value ="user" id = "user"> user <br>
-	<input type= "radio" name="r" value ="admin" id ="user" > Admin <br>
+
 				<button value="submit" type="submit" onclick= "return chk()">
 					submit
 				</button> <br>

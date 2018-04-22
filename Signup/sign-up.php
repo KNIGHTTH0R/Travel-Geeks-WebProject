@@ -20,7 +20,7 @@ $s=$_FILES['fileToUpload']['tmp_name'];
 $n=$_FILES['fileToUpload']['name'];
 $ar=explode("/",$_FILES['fileToUpload']['type']);
 
-if(empty($firstname) || empty($lastname) || empty($gender) || empty($email) || empty($password) || empty($confirm_password) || empty($dob) || empty($address) ){
+if(empty($firstname) || empty($lastname) || empty($gender) || empty($email) || empty($password) || empty($confirm_password) || empty($dob) || empty($address) || empty($country) ){
 	echo "You can't leave any field empty. Please go back to sign up page.";//not necessary
 
 } else {
@@ -49,7 +49,7 @@ if(empty($firstname) || empty($lastname) || empty($gender) || empty($email) || e
 }*/
 else{
  if(move_uploaded_file($s,"uploads/".$n)){
-		$s="insert into users values(null,'$md5','$email','$address','$dob','$gender','$firstname','$lastname','uploads/".$n."','user')";
+		$s="insert into users values(null,'$md5','$email','$address','$country','$dob','$gender','$firstname','$lastname','uploads/".$n."','user')";
 		echo $s;
 		echo $dob;
 		if(updateSQL($s)){

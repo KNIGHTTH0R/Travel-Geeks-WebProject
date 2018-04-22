@@ -1,18 +1,18 @@
 <?php
 
-
+//for users edit
 require("db_rw.php");
 $firstname = $_POST["fname"];
 $lastname = $_POST["lname"];
 $gender = $_POST["gender"];
 $email = $_POST["email"];
-$password =$_POST["pass"];
+$password =md5($_POST["pass"]);
 $md5 =  md5($_POST["pass"]);
 $confirm_password = $_POST["conpass"];
 $country = $_POST["country"];
 $address =$_POST["address"];
 $dob =$_POST["dob"];
-$r = $_POST["r"];
+
 //$role = $_POST["role"];
 $currentuser = $_COOKIE['user'];
 //$dob_month =$_POST["dob_month"];
@@ -23,7 +23,7 @@ $s=$_FILES['fileToUpload']['tmp_name'];
 $n=$_FILES['fileToUpload']['name'];
 $ar=explode("/",$_FILES['fileToUpload']['type']);
 
-if(empty($firstname) || empty($lastname) || empty($gender) || empty($email) || empty($password) || empty($confirm_password) || empty($dob) || empty($address) ){
+if(empty($firstname) || empty($lastname) || empty($gender) || empty($email) || empty($password) || empty($confirm_password) || empty($dob) || empty($address) ||empty($country)){
 	echo "You can't leave any field empty. Please go back to sign up page.";//not necessary
 
 } else {
@@ -45,7 +45,7 @@ $jsn1=getJSONFromDB($s1);
 $jr2=json_decode($jsn1);
 $currentID= $jr2[0]->user_id; //ImageAddress = 'uploads/".$n."',
 echo "<br>";
-		$s=" update users  SET password= '$password', address = '$address', Name ='$firstname', Lastname='$lastname',  Role ='$r',gender ='$gender',ImageAddress = 'uploads/".$n."',dob  = '$dob' where  user_id ='$currentID'";
+		$s=" update users  SET password= '$password', address = '$address',country ='$country', Name ='$firstname', Lastname='$lastname',  Role ='user',gender ='$gender',ImageAddress = 'uploads/".$n."',dob  = '$dob' where  user_id ='$currentID'";
 		echo $s;
 	//	echo $dob;
 		if(updateSQL($s)){

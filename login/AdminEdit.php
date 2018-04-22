@@ -2,7 +2,7 @@
 
 <table>
 <tr>
-  <th>First Name </th>  <th> Last name </th>  <th> email </th>  <th> Password </th> <th> Address </th> <th> DOB </th>
+  <th>First Name </th>  <th> Last name </th> <th> Country </th> <th> email </th>  <th> Password </th> <th> Address </th> <th> DOB </th>
       <th> Gender </th>
         <th> Role </th>
         </tr>
@@ -19,6 +19,7 @@ foreach ($a as $v) {
   echo "<tr><form action='admineditserver.php' method =post>";
 echo "<td><input type ='text' name='fname' value='".$v['Name']."'></td>";
 echo "<td><input type ='text' name='lname' value='".$v['Lastname']."'></td>";
+echo "<td><input type ='text' name='country' value='".$v['country']."'></td>";
 echo "<td><input type ='text' name='email' value='".$v['email']."'></td>";
 echo "<td><input type ='text' name='password' value=''></td>";
 echo "<td><input type ='text' name='address' value='".$v['address']."'></td>";

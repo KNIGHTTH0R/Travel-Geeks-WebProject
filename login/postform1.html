@@ -1,24 +1,44 @@
-<!DOCTYPE html>
+<script>
+function chk(){
+var flag =false;
+var k = document.getElementById("span");
+k.innerHTML = "";
+if (document.getElementById("text").value.length >0){
+flag = true;
+k.innerHTML = "OK";
+//alert("OK");
+}
+else {
+flag =false;
+k.innerHTML = "text field empty";
+
+}
+return flag;
+}
+
+
+</script>
 <html>
 <body>
 
 <form action="postingcheck.php" method = "post">
-  <textarea name="message" style="width:600px; height:400px;"></textarea>
+  <textarea onkeyup="chk()" name="message" style="width:600px; height:400px;" id ="text" ></textarea>
   <br>
-  
+
   Season <br>
-  
-  <select name ="Season">
+
+  <select name ="Season" id ="select">
   <option value="Summer">Summer</option>
   <option value="Rainy">Rainy</option>
   <option value="Fall">Fall</option>
    <option value="Winter">Winter</option>
   <option value="Spring">Spring</option>
-  
-  
+
+
 </select> <br>
+<span  id = "span" style= "color : red;"></span><br>
 Similar Places <input type = "text" name ="similar"><br>
-<input type="submit" value ="Confirm Post"><br>
+<input type="submit" value ="Confirm Post" onclick="return chk()"><br>
 
 <a href="logout.php"> Logout </a>'
 

@@ -6,18 +6,18 @@ var password=document.getElementById("pass").value;
 span.innerHTML = "";
 	if ( password == conpassword){
 		span.innerHTML = "Password and Confirm Password Matches";
-		
-		
+
+
 	}
-	
+
 	else{
 		span.innerHTML = "Password and Confirm Password does not Match";
-		
+
 	}
-	
 
 
-}	
+
+}
 
 function chk(){
 	var flag=true;
@@ -62,33 +62,33 @@ function chk(){
 		else if (c != 4 ){
 		alert("mail error");
 		flag=false;
-		
+
 	}
-		
-	
+
+
 	else if (  c != 4 ){
 		alert("mail error");
 		flag=false;
-		
+
 	}
 	else if(country==0){
 		alert("Country empty");
 		flag=false;
 	}
 	else if(pass==0 && conpass == 0){
-		
+
 		alert("password error");
 		flag=false;
-		
-		
+
+
 	}
-	
+
 	else if( password != conpassword)
 		{alert("password error");
 		flag=false;
 		}
-	
-	
+
+
 	else if(address ==0){
 		alert("address empty");
 		flag=false;
@@ -96,13 +96,13 @@ function chk(){
 	else if (document.getElementById("upload").value.length==0){
 alert("No File Selected");
 flag =false;
-	}	
+	}
 	if(flag){
 		alert("OK");
 	}
 	return flag;
-	
-	
+
+
 }
 </script>
 <html>
@@ -111,11 +111,11 @@ flag =false;
 		<h1>Travel Diaries</h1>
 		<img src = "https://images.freeimages.com/images/large-previews/45d/the-old-atlas-3-1423485.jpg" alt ="World Map" style="width: 40%; HEIGHT : 30%" >
 		<style>
-			h1 { color : Tomato; 
+			h1 { color : Tomato;
 			text-align : center;
 			}
 			div{
-			text-align : center; 
+			text-align : center;
 			color : RED;
 			}
 			img {
@@ -123,11 +123,11 @@ flag =false;
 			    margin-left: auto;
 			    margin-right: auto;
 			}
-		</style> 
+		</style>
 	</head>
 	<body>
-		<form action="sign-up.php" method="post" enctype="multipart/form-data"> 
-			<h1> Sign Up Form </h1> 
+		<form action="sign-up.php" method="post" enctype="multipart/form-data">
+			<h1> Sign Up Form </h1>
 			<div>
 				First Name <input type = "text" name = "fname" id ="fname"/><br>
 Last Name <input type = "text" name ="lname" id ="lname"/><br>
@@ -141,22 +141,22 @@ Confirm Password <input type = "password" name ="conpass" id ="conpass" onkeyup 
 Nationality <input type = "text" name = "country"  id ="country"> <br>
 Addresss <input type = "text" name = "address" id ="address"> <br>
 
-				DOB 
+				DOB
 				<input type="date" name="dob">
 				<br>
-				
+
 				<button  type="button" onclick = "chk()">
 					Test
 				</button>
 				<br>
 				Select file to upload : <input type="file" name="fileToUpload" id = "upload">
-				
+
 				<button value="submit" type="submit" onclick= "return chk()">
 					submit
 				</button>
-					
-                    
-				
+
+
+
 			</div>
 		</form>
 	</body>
