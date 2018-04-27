@@ -1,4 +1,5 @@
 <?php
+
 function updateDB($sql){
 	$conn = mysqli_connect("localhost", "root", "", "travel");
 	if (!$conn) {

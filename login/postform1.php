@@ -21,11 +21,13 @@ return flag;
 <html>
 <body>
 
-<form action="postingcheck.php" method = "post">
-  <textarea onkeyup="chk()" name="message" style="width:600px; height:400px;" id ="text" ></textarea>
-  <br>
+<form action="postingcheck.php" method = "post" enctype="multipart/form-data">
+  Select file to upload : <input type="file" name="file" id = "upload">
 
-  Season <br>
+  <textarea onkeyup="chk()" name="message" style="width:600px; height:400px;" id ="text" ></textarea>
+
+
+  Season
 
   <select name ="Season" id ="select">
   <option value="Summer">Summer</option>
@@ -35,18 +37,37 @@ return flag;
   <option value="Spring">Spring</option>
 
 
-</select> <br>
-<span  id = "span" style= "color : red;"></span><br>
-<?PHP
-Similar Places <select  name ="similar" >
-
-
 </select>
-?>
-	Upload an imaage : <input type="file" name="fileToUpload" id = "upload">
-<input type="submit" value ="Confirm Post" onclick="return chk()"><br>
+<br></br>
+Content Type <input type = "text" name = "type" id = "content"><br></br>
 
-<a href="logout.php"> Logout </a>'
+
+
+
+<span  id = "span" style= "color : red;"></span>
+<?PHP
+echo "Choose similar place <br>";
+require ('db_rw.php');
+$sq = "select * from  tourist_spot";
+$a =getDataFromDB($sq);
+
+echo '<select  name ="similar">';
+foreach ($a as  $v){
+
+echo '<option  value =" '.$v['name'].'" >' .$v['name']. '</option>';
+
+}
+
+echo '</select>';
+
+?>
+<br> </br>
+<input type="submit" value ="Confirm Post" onclick="return chk()">
+
+
+
+
+
 
 </form>
 

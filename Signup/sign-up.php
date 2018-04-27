@@ -1,6 +1,6 @@
 <?php
 
-
+print_r($GLOBALS);
 require("db_rw.php");
 $firstname = $_POST["fname"];
 $lastname = $_POST["lname"];
