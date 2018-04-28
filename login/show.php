@@ -5,7 +5,7 @@ function search() {
 	//var v2=document.getElementById("mytext2").value;
 	var  xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
-		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {			
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			var m=document.getElementById("txtHint");
 			m.innerHTML=xmlhttp.responseText;
 			document.getElementById("spin").style.visibility="hidden";
@@ -17,11 +17,11 @@ function search() {
 	//alert(url);
 	xmlhttp.open("GET", url,true);
 	xmlhttp.send();
-} 
+}
 
 
 </script>
-
+<a href="demo.php">HOME</a>
 <style>
 #cs{
 		font-size:18pt;color:red;
@@ -51,19 +51,24 @@ foreach ( $a as $v){
 	echo " <h1 style='color:blue ; text-align : center ;' >  $spotnames   ";
 	echo $v["address"];
 	echo "<br>";
-	echo "Type :" .$v['type'];
-	
+	echo "Country:".$v["country"];
 	echo "<br>";
-	
-	
+	echo "Type :" .$v['type'];
+
+	echo "<br>";
+	echo "Suggested Season:".$v["suggested_season"];
+	echo "<br>";
+
+
+
 	print "<img src='$v[imageloc]' alt='sample image' height='640' width='640' />";
 	echo "<br>";
 	echo $v["description"];
-	
+
 	echo "</div>";
-	echo "</h1>"; 
+	echo "</h1>";
 	//echo " <h1 style='color:blue ; text-align : center ;' >  '$v["address"]'   </h1> ";
-	
+
 }
 
 
@@ -73,5 +78,5 @@ foreach ( $a as $v){
 
 
 
-}	
+}
 ?>

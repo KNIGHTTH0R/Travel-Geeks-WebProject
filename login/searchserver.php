@@ -1,11 +1,11 @@
-<!DOCTYPE HTML>  
+<!DOCTYPE HTML>
 <script>
 show(){
-	
+
 	var v =document.getElementById("ok");
 
-	
-	
+
+
 }
 
 
@@ -19,8 +19,8 @@ if(isset($_REQUEST["spotnames"]) && strlen($_REQUEST["spotnames"])>0){
 	//echo $sq;
 	$a=getDataFromDB($sq);
 	foreach($a as $v){
-		
-		
+
+
 		$c = $v["name"];
 		//echo $v["name"];
 		echo "<br>";
@@ -31,17 +31,10 @@ if(isset($_REQUEST["spotnames"]) && strlen($_REQUEST["spotnames"])>0){
  echo "<a href='show.php?spotnames=$c'>$c</a>";
 
 
-		
+
 	}
 }
-else if(isset($_REQUEST["ist"])){
-	$s="insert into student values('null','".$_REQUEST["un"]."','".$_REQUEST["cg"]."','CS')";
-	echo $s;
-	if(updateSQL($s))
-		echo "Data Saved";
-	else
-		echo "Data Save Error!";
-}
+
 else{
 	echo "Invalid Parameter!";
 }

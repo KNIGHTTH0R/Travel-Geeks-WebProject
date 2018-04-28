@@ -1,20 +1,20 @@
 
   <?PHP
   require ('db_rw.php');
-  $sq = "select * from  tourist_spot";
+  $sq = "select Name from  users";
     $a =getDataFromDB($sq);
 
-  echo '<select  name ="similar">';
- foreach ($a as  $v){
+
+print_r($a);
 
 
+echo "<br>";
+echo  $a[2]['Name'];
+ //echo  $a[0]=>[Name];
+foreach ($a as $v) {
+  echo $v['Name'];
+}
 
 
-echo '<option  value =" '.$v['name'].'" >' .$v['name']. '</option>';
-
-
-  }
-
-  echo '</select>';
 
   ?>
