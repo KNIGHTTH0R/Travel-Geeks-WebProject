@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2018 at 12:15 AM
+-- Generation Time: Apr 29, 2018 at 08:39 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -92,7 +92,8 @@ INSERT INTO `post_content` (`POST_ID`, `user_id`, `Text`, `season`, `content_typ
 (8, 2, 'very nyc lagva', 'Summer', 'Review', ' Coxs Bazar', 'uploads/31353696_10160592979440268_5091238740731363328_n.jpg'),
 (9, 2, 'very nyc lagca na?~!!?~ 21', 'Summer', 'Review', ' Coxs Bazar', 'uploads/26112183_1770739239898244_3103405048261737405_n.jpg'),
 (10, 10, 'I love strawberries ', 'Summer', 'shitposting', ' Louvre Museum', 'uploads/28516632_2028320183861880_3474521970522092364_o.jpg'),
-(11, 10, 'xdfrtdfgdfg', 'Summer', 'cvvbhcvbcvf', ' Coxs Bazar', 'uploads/31190006_1852135798418074_7764842245970198528_n.jpg');
+(11, 10, 'xdfrtdfgdfg', 'Summer', 'cvvbhcvbcvf', ' Coxs Bazar', 'uploads/31190006_1852135798418074_7764842245970198528_n.jpg'),
+(12, 2, 'Hi all test', 'Summer', 'Cityscape', ' Puran Dhaka', 'uploads/back4.jpg');
 
 -- --------------------------------------------------------
 
@@ -137,10 +138,13 @@ CREATE TABLE `tourist_spot` (
 --
 
 INSERT INTO `tourist_spot` (`spot_id`, `name`, `type`, `description`, `address`, `country`, `suggested_season`, `imageloc`) VALUES
-(1, 'Puran Dhaka', 'Architecture ', '                Oldest dhaka in dhaka new img                                                ', 'puran dhaka', 'Bangladesh', 'Summer', 'images/purandhaka.jpg'),
+(1, 'Puran Dhaka', 'Architecture ', '                      Oldest dhaka in dhaka new img                                                                        ', 'puran dhaka', 'Bangladesh', 'Summer', 'uploads/purandhaka.jpg'),
 (2, 'Louvre Museum', 'Architecture', '  Museum of Art        2', 'Paris', 'France', 'Spring', 'images/louvre.jpg'),
 (3, 'Coxs Bazar', 'Natural', 'Largest sea beach in the world', 'Bangladesh', 'Bangladesh', 'Summer', 'images/cox.jpg'),
-(4, 'Pantheon', 'Religious', 'Old Roman Temple currently a church.', 'Rome,Italy', 'Italy', 'Winter', 'images/pantheon.jpg');
+(4, 'Pantheon', 'Religious', 'Old Roman Temple currently a church.', 'Rome,Italy', 'Italy', 'Winter', 'images/pantheon.jpg'),
+(5, 'Bandarban', 'Natural', ' nyc place', 'Chittagong', 'Bangladesh', 'Winter', 'uploads/back2.jpg'),
+(6, 'Colloseum', 'Architecture', 'Incredible place to visit, historical place.', 'Rome,Italy', 'Italy', 'Winter', 'uploads/Colloseum.jpg'),
+(7, 'Eiffel Tower', 'Architecture', 'Beautiful place, romantic place....       ', 'France', 'France', 'Summer', 'uploads/Eiffel.jpg');
 
 -- --------------------------------------------------------
 
@@ -167,7 +171,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `password`, `email`, `address`, `country`, `dob`, `gender`, `Name`, `Lastname`, `ImageAddress`, `Role`) VALUES
-(2, '900150983cd24fb0d6963f7d28e17f72', 'abc@gmail.com', 'bd', 'Wakanda', NULL, 'male', 'Far', 'Ras', 'uploads/11-8-bit-pixel-character.jpg', 'admin'),
+(2, '900150983cd24fb0d6963f7d28e17f72', 'abc@gmail.com', 'bd', 'Wakanda', '2018-04-03', 'male', 'Far', 'Ras', 'uploads/11-8-bit-pixel-character.jpg', 'admin'),
 (3, 'd41d8cd98f00b204e9800998ecf8427e', 'qwe@g.com', 'wakanda', 'Lothric', '', 'female', 'qwe', 'asd', 'uploads/ffff.jpg', 'user'),
 (6, '4d682ec4eed27c53849758bc13b6e179', 'ts@gmail.com', 'Dhaka ', 'Bangladeshi', NULL, 'male', 'Tanvir', 'Shuvo', 'uploads/30653007_2045268288822036_1675620596488077312_o.jpg', 'user'),
 (9, '202cb962ac59075b964b07152d234b70', '123@c.com', '123', 'Naboo', '2018-04-04', 'male', '123', '123', 'uploads/sfweweee.JPG', 'user'),
@@ -226,7 +230,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `post_content`
 --
 ALTER TABLE `post_content`
-  MODIFY `POST_ID` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `POST_ID` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `spot_types`
@@ -238,7 +242,7 @@ ALTER TABLE `spot_types`
 -- AUTO_INCREMENT for table `tourist_spot`
 --
 ALTER TABLE `tourist_spot`
-  MODIFY `spot_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `spot_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`

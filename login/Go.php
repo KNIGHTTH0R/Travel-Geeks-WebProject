@@ -1,5 +1,5 @@
 <div><h1><a href="demo.php"> Travel Geeks </a></h1> </div>
-
+<body background="images/back3.jpg">
 <H1> list of types <h1>
 
 

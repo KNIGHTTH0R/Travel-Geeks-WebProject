@@ -1,6 +1,6 @@
 <div><h1><a href="demo.php"> Travel Geeks </a></h1> </div>
 <h1 style="text-align: center; font-size: 50px;"> List of countries </h1>
-
+<body background="images/back3.jpg">
 <div style="text-align: center;">
 
 	<?php

@@ -1,9 +1,34 @@
+<!doctype html>
+<html>
+
+
+ <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+ <div id="block">Travel Geeks, A Travel Diary!</div>
+
+ <script>
+ // Using multiple unit types within one animation.
+
+ $( "#block" ).click(function() {
+   $( "#block" ).animate({
+     width: "70%",
+     opacity: 0.4,
+     marginLeft: "0.6in",
+     fontSize: "3em",
+     borderWidth: "10px"
+   }, 1500 );
+ });
+ </script>
+</html>
 <style>
 div{
 	border:4px solid Orange;
 	font-family:Comic Sans MS;
 	color: Black;
 	text-align: center;
+	 background-color: #bca;
+	 width: 500px;
+	 margin: 0 auto;
 	}
 	body { background-color: lightblue;
 }
@@ -60,7 +85,7 @@ function search() {
 
 <div>
 
-	
+
 
 <?php
 include('Cookiebro.php');
