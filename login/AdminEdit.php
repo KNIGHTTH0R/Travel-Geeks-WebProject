@@ -23,7 +23,7 @@ padding: 10px;
 <tr>
   <th>First Name </th>  <th> Last name </th> <th> Country </th> <th> email </th>  <th> Password </th> <th> Address </th> <th> DOB </th>
       <th> Gender </th>
-        <th> Role </th>
+        <th> Role </th> <th><h1><a href="logout.php"> Logout </a><h1> </th>
         </tr>
 
 

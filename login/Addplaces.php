@@ -5,7 +5,7 @@
   <th> Name </th>  <th> type  </th> <th> Address </th> <th> Country </th>  <th> Suggested Season </th> <th> IMage </th>  <th> Old imagelocation </th><th> New imagelocation </th> <th>  </th><th> Description </th>
 
         </tr>
-
+<a href="logout.php"> Logout </a>
 
               <?php
 require("db_rw.php");

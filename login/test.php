@@ -44,7 +44,7 @@ function search() {
 <p id="txtHint" style="border-bottom:6px solid red;"></p>
 <br/>
 
-<div><h2> <a href="demo.php">Travel Geeks, A Travel Diary </a> </h2> <br> </div>
+<div><h2> <a href="demo.php">Travel Geeks, A Travel Diary </a> </h2> <br> <a href="logout.php"> Logout </a></div>
 
 <?php
 require("Cookiebro.php");
@@ -79,6 +79,28 @@ echo "</h2>";
 
 
 
+
+
+
+ ?>
+
+ <div>
+
+For Current User Local Spots
+ </div>
+
+<?php
+if(isset($_COOKIE['user'])){
+callID();
+$ss = "select * from tourist_spot where country= '".$con."'  ";
+//echo $ss;
+$e = getDataFromDB($ss);
+foreach ($e as $d) {
+  $g = $d["name"];
+  echo "<a href='show.php?spotnames=$g'>$g</a>";
+  print "<img src='$d[imageloc]' alt='sample image' height='60' width='60' />";
+}
+}
 
 
 

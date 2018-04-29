@@ -15,7 +15,10 @@ border: 3px solid green;
 padding: 10px;
 }
 </style>
-<div><h1><a href="demo.php"> Travel Geeks </a></h1> </div>
+<div><h1><a href="demo.php"> Travel Geeks </a></h1> <br>
+<h2><a href="logout.php"> Logout </a></h2>
+
+</div>
 <script>
 function chk(){
 var flag =false;
@@ -53,6 +56,7 @@ return flag;
   <option value="Fall">Fall</option>
    <option value="Winter">Winter</option>
   <option value="Spring">Spring</option>
+	<option value="N/A">N/A</option>
 
 
 </select>
@@ -75,7 +79,7 @@ foreach ($a as  $v){
 echo '<option  value =" '.$v['name'].'" >' .$v['name']. '</option>';
 
 }
-
+echo '<option value ="None">None</option>';
 echo '</select>';
 
 ?>
