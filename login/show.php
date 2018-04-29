@@ -27,7 +27,7 @@ function search() {
 		font-size:18pt;color:red;
 	}
 </style>
-<input type = "text" id = "spotnames" onkeyup = "search()"  />
+<input type = "text" id = "spotnames" onkeyup = "search()"  /> Search by spotnames
 <img src= "spin.gif" id = "spin" width="20px" height="20px" style="visibility:hidden" /><br/>
 
 <p id="txtHint" style="border-bottom:6px solid red;"></p>

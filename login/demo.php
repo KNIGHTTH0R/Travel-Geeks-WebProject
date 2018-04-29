@@ -79,6 +79,7 @@ function search() {
 
 <p id="txtHint" style="border-bottom:6px solid red;"></p>
 <br/>
+<div><h2> <a href="test.php">Suggestions For Travelers</a> </h2> <br> </div>
 
 <div><h2> <a href="Go.php">Spot Types </a> </h2> <br> </div>
  <div><h2> <a href="GoCountry.php">Spots in Countries   </a> </h2> </div>
