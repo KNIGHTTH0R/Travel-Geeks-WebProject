@@ -110,6 +110,8 @@ flag =false;
 </script>
 <html>
 	<head>
+		<h1><a href="demo.php"> Take Me to Main Site </a></h1>
+
 		<title> Sign In</title>
 		<h1>Travel Diaries</h1>
 		<img src = "https://images.freeimages.com/images/large-previews/45d/the-old-atlas-3-1423485.jpg" alt ="World Map" style="width: 40%; HEIGHT : 30%" >

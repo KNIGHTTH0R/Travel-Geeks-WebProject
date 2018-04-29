@@ -1,4 +1,23 @@
 <html>
+<style>
+div{
+	border:4px solid Red;
+	font-family:Comic Sans MS;
+	color: Aqua;
+	text-align: center;
+	}
+	body { background-color: lightblue;
+}
+
+h2{
+color: Black;
+text-align: auto;
+border: 3px solid green;
+padding: 10px;
+}
+</style>
+
+<div><h1><a href="demo.php"> Travel Geeks </a></h1> </div>
 
 <table>
 <tr>

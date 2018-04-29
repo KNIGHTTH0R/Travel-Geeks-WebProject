@@ -1,11 +1,27 @@
 
 <html>
 <style>
+div{
+	border:4px solid Red;
+	font-family:Comic Sans MS;
+	color: Aqua;
+	text-align: center;
+	}
+	body { background-color: lightblue;
+}
+
+h2{
+color: Black;
+text-align: auto;
+border: 3px solid green;
+padding: 10px;
+}
 </style>
 <body>
 <h1> Travel Geeks </h1>
 <div> Posts </div>
 
+<div><h1><a href="demo.php"> Travel Geeks </a></h1> </div>
 
 
 
@@ -31,7 +47,7 @@ $type = $_POST['type'];
 echo $m; echo '<br>';
 //echo  $_REQUEST['Season']. " " .$_REQUEST['similar'];
 $sql = "insert into post_content values(null,'$currentID','$m','$s2','$type','$sim','uploads/".$n."')";
-echo $sql;
+//echo $sql;
 if ($ar[0]!='image'){
 echo "file type not supported";
 

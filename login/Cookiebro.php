@@ -1,9 +1,11 @@
 <?php
+error_reporting(0);
 require("db_rw.php");
 function callID(){
 global $currentID;
 global $currentuser;
 global $rol;
+global $userimg;
 
 $currentuser = $_COOKIE['user'];
 $s1 = "select * from users where email = '$currentuser'";
@@ -25,8 +27,10 @@ function callusernames($sql){
 $a = getDataFromDB($sql);
 foreach ($a as $v) {
   $uname = $v['Name'];
+  $userimg = $v['ImageAddress'];
+  print '<img src="'.$v["ImageAddress"].'" alt="sample image" height="50" width="50"/>';
+}
 }
 
 
-}
 ?>

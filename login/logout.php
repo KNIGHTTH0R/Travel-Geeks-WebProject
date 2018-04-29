@@ -4,5 +4,5 @@ session_start();
 setcookie("flag", false, time() - 1000);
 setcookie("user", "", time() - 1000);
 
-header("Location:index.html");
+header("Location:index.php");
 ?>
