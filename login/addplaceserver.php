@@ -23,6 +23,8 @@ echo "return back you cannot place any field empty";
  }
 
    else {
+
+
      if (empty($_FILES['fileToUpload']['name']))
      {
      //when we find it empty
@@ -69,4 +71,45 @@ echo   "file upload error";
 
 }
 
-} ?>
+}
+else {
+
+echo "beno"; // work here to add
+$u = $_POST['name'];
+$d = $_POST['des'];
+$t = $_POST['type'];
+$a = $_POST['address'];
+ $c =$_POST['country'];
+ $sg = $_POST['sugg'];
+ //$img = $_POST['img'];
+ $s=$_FILES['fileToUpload']['tmp_name'];
+ $n=$_FILES['fileToUpload']['name'];
+ $ar=explode("/",$_FILES['fileToUpload']['type']);
+ if ($ar[0]!="image"){
+   echo "filetype not supported";
+ }
+ else {
+   if(move_uploaded_file($s,"uploads/".$n) ){
+     $sql = "insert into tourist_spot values(null,'$u','$t','$d','$a','$c','$sg','uploads/".$n."')";
+     echo $sql;
+   if (updateSQL($sql) ){
+     echo "DB updated";
+   }
+else {
+  echo "DB error";
+}
+
+   }
+   else {
+     echo "FILE UPLOAD ERROR!";
+   }
+   }
+
+ }
+
+
+
+
+
+
+?>
