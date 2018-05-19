@@ -23,12 +23,18 @@ padding: 10px;
 <tr>
   <th>First Name </th>  <th> Last name </th> <th> Country </th> <th> email </th>  <th> Password </th> <th> Address </th> <th> DOB </th>
       <th> Gender </th>
-        <th> Role </th> <th><h1><a href="logout.php"> Logout </a><h1> </th>
-        </tr>
+        <th> Role </th>    <th>  </th> <th> Delete:YES </th><th>/NO </th>
+      <th><h1><a href="logout.php"> Logout </a><h1> </th>  </tr>
 
 
               <?php
-require("db_rw.php");
+
+
+
+require("Cookiebro.php");
+callID();
+echo $rol;
+ if ($rol == "admin"){
 $sq = "select * from users";
 $a = getDataFromDB($sq);
 foreach ($a as $v) {
@@ -57,19 +63,24 @@ echo '<td><input type ="radio" name="gender" value="male" '.($vegen=='male' ? 'c
 echo '<td><input type ="radio" name="role" value="admin" '.($vrole=='admin' ? 'checked="checked"' : '').'>Admin <br> <input type ="radio" name="role" value="user" '.($vrole=='user' ? 'checked="checked"' : '').'>User</td>' ;
 
 echo "<td><input type ='hidden' name='userid' value='".$v['user_id']."'></td>";
-
+echo "<td><input type = 'radio' name='delete' value = 'yes' <td>";
+echo "<td><input type = 'radio' name='delete' value = 'no' <td>";
 echo "<td><input type = 'submit' <td>";
-echo "</form></tr>";
 
+echo "</form></tr>";
+}
 
 
 
 }
+else {
 
+echo " you do not have the authorization";
+
+}
 ?>
 
   <table>
-
 
 
 </html>

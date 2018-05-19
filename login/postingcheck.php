@@ -55,7 +55,7 @@ echo "file type not supported";
 else {
 if(move_uploaded_file($s,"uploads/".$n)){
   if(updateSQL($sql)){
-    echo "Data Inserted into DB";
+    echo "Post has been Added, User . ";
   }
   else{
     echo "DB Error!";

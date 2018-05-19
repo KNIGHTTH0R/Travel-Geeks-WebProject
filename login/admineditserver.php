@@ -29,6 +29,7 @@ $p = md5($_POST['password']);
  $a = $_POST['address'];
  $dob = $_POST['dob'];
  $country = $_POST['country'];
+ $delete = $_POST['delete'];
  if(empty($u)||empty($l)||empty($e)||empty($p)||empty($g)||empty($r)||empty($a)||empty($dob)||empty($country)){
 echo "return back you cannot place any field empty";
 
@@ -37,6 +38,18 @@ echo "return back you cannot place any field empty";
    else {
 $sql = "update users SET Name= '$u' , Lastname ='$l', email ='$e',country= '$country', password = '$p', gender ='$g' , dob='$dob' , address='$a' , Role = '$r' where user_id = '$uid'";
 //echo $sql;
+if ($delete == "yes"){
+$sqldel = "DELETE FROM USERS WHERE user_id = '$uid'";
+if(updateSQL($sqldel)){
+	echo "user deleted";
+}
+else {
+	echo "db error!";
+}
+}
+
+  else {
+
 if(updateSQL($sql)){
 echo "data has been updated";
 
@@ -46,5 +59,5 @@ else{
 }
 
 }
-
+}
 ?>

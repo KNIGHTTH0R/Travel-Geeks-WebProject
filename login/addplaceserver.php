@@ -18,8 +18,8 @@ padding: 10px;
 <div><h1><a href="demo.php"> Travel Geeks </a></h1> </div>
 
 <?php
-require("db_rw.php");
-
+require("Cookiebro.php");
+callID();
 if (!isset($_GET['add'])){
 $u = $_POST['name'];
 $uid = $_POST['id'];
@@ -92,7 +92,7 @@ echo   "file upload error";
 
 }
 else {
-
+//work from here
 //echo "beno"; // work here to add
 $u = $_POST['name'];
 $d = $_POST['des'];
@@ -104,6 +104,13 @@ $a = $_POST['address'];
  $s=$_FILES['fileToUpload']['tmp_name'];
  $n=$_FILES['fileToUpload']['name'];
  $ar=explode("/",$_FILES['fileToUpload']['type']);
+ if(empty($u)||empty($d)||empty($t)||empty($c)||empty($sg)||empty($a))
+ {
+echo "return back you cannot place any field empty. ";
+
+ }
+
+
  if ($ar[0]!="image"){
    echo "filetype not supported";
  }
@@ -111,16 +118,16 @@ $a = $_POST['address'];
    if(move_uploaded_file($s,"uploads/".$n) ){
      $sql = "insert into tourist_spot values(null,'$u','$t','$d','$a','$c','$sg','uploads/".$n."')";
     // echo $sql;
-   if (updateSQL($sql) ){
-     echo "DB updated";
+   if (updateSQL($sql) && $rol == "admin" ){
+     echo "DB updated. ";
    }
 else {
-  echo "DB error";
+  echo " DB error or you do not have authorization. ";
 }
 
    }
    else {
-     echo "FILE UPLOAD ERROR!";
+     echo " FILE UPLOAD ERROR!";
    }
    }
 

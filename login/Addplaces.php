@@ -1,5 +1,6 @@
 
 <h1> Edit Places <h1>
+  <div><h1><a href="demo.php"> Travel Geeks </a></h1> <br>
 <table>
 <tr>
   <th> Name </th>  <th> type  </th> <th> Address </th> <th> Country </th>  <th> Suggested Season </th> <th> IMage </th>  <th> Old imagelocation </th><th> New imagelocation </th> <th>  </th><th> Description </th>
@@ -8,7 +9,9 @@
 <a href="logout.php"> Logout </a>
 
               <?php
-require("db_rw.php");
+require("Cookiebro.php");
+callID();
+if($rol == "admin"){
 $sq = "select * from tourist_spot";
 $a = getDataFromDB($sq);
 foreach ($a as $v) {
@@ -35,7 +38,11 @@ echo "</form></tr>";
 
 
 }
+}
+else {
+echo "you do not have the authorization";
 
+}
 ?>
 
 
